@@ -44,19 +44,19 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach ( $directorates as  $index => $user )
+								@foreach ( $directorates as  $index => $directorate )
 								<tr>
 									<td>{{ $index + 1 }}</td>
-									<td>{{ $user -> name}}</td>
+									<td>{{ $directorate -> name}}</td>
 										<td>
                                             @can('تعديل مديرية')
-												<a href="{{ route('directorates.edit', $user->id) }}" class="btn btn-sm btn-info" title="تعديل">
+												<a href="{{ route('directorates.edit', $directorate->id) }}" class="btn btn-sm btn-info" title="تعديل">
 													<i class="las la-pen"></i>
 												</a>
 											@endcan
                                              @can('حدف مديرية')
 												<a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-													data-user_id="{{ $user->id }}" data-username="{{ $user->name }}"
+													data-directorate_id="{{ $directorate->id }}" data-directoratename="{{ $directorate->name }}"
 													data-toggle="modal" href="#modaldemo8" title="حذف">
 													<i class="las la-trash"></i>
 												</a>
@@ -84,8 +84,8 @@
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <p>هل انت متاكد من عملية الحذف ؟</p><br>
-                        <input type="hidden" name="user_id" id="user_id" value="">
-                        <input class="form-control" name="username" id="username" type="text" readonly>
+                        <input type="hidden" name="directorate_id" id="directorate_id" value="">
+                        <input class="form-control" name="directoratename" id="directoratename" type="text" readonly>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
@@ -126,11 +126,11 @@
 <script>
     $('#modaldemo8').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
-        var user_id = button.data('user_id')
-        var username = button.data('username')
+        var directorate_id = button.data('directorate_id')
+        var directoratename = button.data('directoratename')
         var modal = $(this)
-        modal.find('.modal-body #user_id').val(user_id);
-        modal.find('.modal-body #username').val(username);
+        modal.find('.modal-body #directorate_id').val(directorate_id);
+        modal.find('.modal-body #directoratename').val(directoratename);
     })
 
 </script>

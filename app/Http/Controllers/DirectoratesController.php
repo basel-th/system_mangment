@@ -74,8 +74,9 @@ class DirectoratesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Directorates $directorates)
+    public function destroy( Request $request,  Directorates $directorates)
     {
-        //
+        Directorates::find($request->directorate_id)->delete();
+        return redirect()->route('directorates.index')->with('success','تم حذف مديرية بنجاح');
     }
 }
