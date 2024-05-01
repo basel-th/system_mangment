@@ -34,7 +34,7 @@ class DirectoratesController extends Controller
             'name' => 'required',
             ]);
               $input = $request->all();
-               $user = Directorates::create($input);
+               $directorates = Directorates::create($input);
             return redirect()->route('directorates.index')
             ->with('success','تم اضافة مديرية بنجاح');
     }
@@ -50,17 +50,25 @@ class DirectoratesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Directorates $directorates)
+    public function edit($id)
     {
-        //
+        $directorate = Directorates::find($id);
+      return view('directorates.edit',compact('directorate'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Directorates $directorates)
+    public function update(Request $request,  $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            ]);
+            $input = $request->all();
+            $directorate = Directorates::find($id);
+            $directorate->update($input);
+            return redirect()->route('directorates.index')
+            ->with('success','تم تحديث معلومات مديرية بنجاح');
     }
 
     /**
