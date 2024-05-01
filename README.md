@@ -22,3 +22,14 @@ To get started with this project, follow the steps below.
 - Role-based access control using the Spatie Laravel Permission package.
 - CRUD operations for managing system resources.
 - Customizable permissions and roles management.
+
+## How can run project 
+
+1. create data by name  => assimgent
+2. run  php artisan migrate:refresh
+3. run php artisan  db:seed --class=CreateAdminUserSeeder     to fetch data admin
+            'name' => 'baselahmed', 
+            'email' => 'baselahmed@gmail.com',
+            'password' => '123456789',
+4. run php artisan db:seed --class="PermissionTableSeeder
+
