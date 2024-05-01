@@ -22,7 +22,7 @@ class DirectoratesController extends Controller
      */
     public function create()
     {
-        //
+        return view('directorates.create');
     }
 
     /**
@@ -30,7 +30,13 @@ class DirectoratesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            ]);
+              $input = $request->all();
+               $user = Directorates::create($input);
+            return redirect()->route('directorates.index')
+            ->with('success','تم اضافة مديرية بنجاح');
     }
 
     /**

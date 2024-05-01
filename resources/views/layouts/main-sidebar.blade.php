@@ -38,9 +38,8 @@
 								
 							<li><a class="slide-item" href="{{ url('directorates/' . $page='index') }}">قائمة المديريات</a></li>
 							 @endcan
-						
 							 @can('اضافة مديرية')
-							<li><a class="slide-item" href="{{ url('directorates/' . $page='index') }}"> اضافه مديرية</a></li>
+							<li><a class="slide-item" href="{{ url('directorates/' . $page='create') }}"> اضافه مديرية</a></li>
 							 @endcan
 						
 						</ul>
