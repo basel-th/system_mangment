@@ -60,7 +60,7 @@ public function store(Request $request)
 
 $input['password'] = FacadesHash::make($input['password']);
 
-$user = User::create($input);
+   $user = User::create($input);
 $user->assignRole($request->input('roles_name'));
 return redirect()->route('users')
 ->with('success','تم اضافة المستخدم بنجاح');

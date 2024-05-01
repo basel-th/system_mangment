@@ -129,11 +129,14 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="form-group">
                                 <label class="form-label"> صلاحية المستخدم</label>
-                                {!! Form::select('roles_name[]', $roles,[], array('class' => 'form-control','multiple')) !!}
-								@foreach ( $roles  as $index => $role )
-									{{-- <option value="{{ $index }}">{{ $role->name }}</option> --}}
-									<option >{{ $role  }}</option>
-								@endforeach                                  
+                                {{-- {!! Form::select('roles_name[]', $roles,[], array('class' => 'form-control','multiple')) !!} --}}
+                                <select name="roles_name[]" class="form-control" multiple>
+                                    @foreach ($roles as $key => $value)
+                                    <option value="{{ $key }}" {{ in_array($key, old('roles_name', [])) ? 'selected' : '' }}>
+                                        {{ $value }}
+                                    </option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>
