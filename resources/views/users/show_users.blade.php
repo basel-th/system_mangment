@@ -53,7 +53,7 @@
 									<td>{{ $user -> name}}</td>
 									<td>{{ $user -> email}}</td>
 									<td>
-										@if ($user->Status == ' مفعل')
+										@if ($user->Status == 'مفعل')
 											<span class="label text-success d-flex">
 												<div class="dot-label bg-success ml-1"></div>{{ $user->Status }}
 											</span>
