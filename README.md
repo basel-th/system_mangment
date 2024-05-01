@@ -8,7 +8,7 @@ To get started with this project, follow the steps below.
 
 ### Prerequisites
 
-- PHP (>= 7.4)
+- PHP (>= 8.2.0)
 - Composer
 - MySQL or any other supported database
 
