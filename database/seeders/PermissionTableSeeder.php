@@ -22,16 +22,21 @@ class PermissionTableSeeder extends Seeder
             'اضافة مستخدم',
             'تعديل مستخدم',
             'حذف مستخدم',
-    
+
             'عرض صلاحية',
             'اضافة صلاحية',
             'تعديل صلاحية',
             'حذف صلاحية',
-    ];
-    foreach ($permissions as $permission) {
 
-        Permission::create(['name' => $permission]);
+            'المديريات',
+            'قائمةالمديريات',
+            'اضافة مديرية',
+            'تعديل مديرية',
+            'حدف مديرية',
+        ];
+        foreach ($permissions as $permission) {
+
+            Permission::create(['name' => $permission]);
         }
-
     }
 }

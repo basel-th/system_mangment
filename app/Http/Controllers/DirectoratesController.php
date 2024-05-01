@@ -13,7 +13,8 @@ class DirectoratesController extends Controller
      */
     public function index()
     {
-        //
+        $directorates = Directorates::all();
+        return view('directorates.index',compact('directorates'));
     }
 
     /**
